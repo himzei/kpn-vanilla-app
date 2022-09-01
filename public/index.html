@@ -1,3 +1,4 @@
+s
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,13 +10,14 @@
     <!-- 파비콘 -->
     <link
     rel="icon" href="./favicon.png">
+
     <!-- reset CSS cdn -->
     <link
     rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
 
     <!-- 구글폰트 : 나눔고딕 -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link
     href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet"/>
 
@@ -34,22 +36,77 @@
     <!-- TypeIt -->
     <script src="./js/typeit.min.js"></script>
 
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js" integrity="sha512-GAEvFso2oksY5JFkHlrfLhZgAV6aL48qxnbxPnbKnNLeG/XsU/c0lh/g9gocZ2RtbRx6VDTqspPEy9ixWvbfzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.min.js" integrity="sha512-95HhZKEWw0vxywbO/5CJhf+KJqEDEmXGDeys3ylTMTuW50ccC26GcV7pPhTiYC8fH3jj0i4AwxRdIN5vfoLqmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import {initializeApp} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+      import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAuhkCYwL8XL4d12RRT1BQNPhAl-evX6rI",
+        authDomain: "ken-s-programming-note.firebaseapp.com",
+        projectId: "ken-s-programming-note",
+        storageBucket: "ken-s-programming-note.appspot.com",
+        messagingSenderId: "123105724625",
+        appId: "1:123105724625:web:7c115e2fc1348a04eb5df0",
+        measurementId: "G-2YDRVHQFW6"
+      };
+
+
+      // Initialize Firebase
+      export const app = firebase.initializeApp(firebaseConfig);
+      // const analytics = getAnalytics(app);
+      const db = app.firestore();
+      db.collection("notices").get().then((notices) => {
+        notices.forEach((doc) => {
+          console.log(doc.data());
+        });
+      });
+    </script>
+
+    <!-- lodash.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- GSAP CDN 자바스크립트로 에니메이션 처리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- GSAP : Scroll to Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js" integrity="sha512-TxuhgzYZZCsKL8STS5wmzau5RF3EotX6lAOZPkOJwfy7q9fXMzhlEHfQI4iUuxVMgkbG5XUtzbjshNCKYL+VXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Scroll Magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- 개인 제작 CSS -->
     <link
     rel="stylesheet" href="./css/main.css"/>
 
     <!-- 개인제작 JS defer 속성 확인 -->
-    <script defer src="./js/main.js"></script>
+    <script defer="defer" src="./js/main.js"></script>
     <!-- 개인제작 jquery -->
-    <script defer src="./js/app.js"></script>
+    <script defer="defer" src="./js/app.js"></script>
+    <!-- 유튜브 제작 -->
+    <script defer src="./js/youtube.js"></script>
   </head>
   <body>
     <!-- HEADER -->
     <header>
       <div class="inner">
         <a href="/">
-          <img src="./images/ken_logo.png" alt="Ken's Programming Note" class="logo">
-        </a>
+          <img src="./images/ken_logo.png" alt="Ken's Programming Note" class="logo"></a>
         <div class="sub-menu">
           <ul class="menu">
             <li>
@@ -70,10 +127,10 @@
         </div>
         <ul class="main-menu">
           <li class="item">
-            <div class="item__name">Profile</div>
+            <div class="item__name">Profile & skills</div>
           </li>
           <li class="item">
-            <div class="item__name">Related Skills</div>
+            <div class="item__name">community & notices</div>
             <div class="item__contents">
               <div class="contents__menu">
                 <ul class="inner">
@@ -142,11 +199,7 @@
               </div>
             </div>
           </li>
-          <li class="item">
-            <div class="item__name">
-              <a href="./pages/community/index.html">Community</a>
-            </div>
-          </li>
+
         </ul>
       </div>
     </header>
@@ -174,6 +227,35 @@
       </div>
     </section>
 
+    <!-- Section : Profile -->
+    <section class="profile-access">
+      <div class="inner">
+        <div class="profile-content">
+          <div class="profile-left">
+            <img src="images/quotes.svg"/>
+            <h3>창의적인 생각, 기본에 충실한 코딩</h3>
+            <p>창의적인 아이디어와 기본에 충실한 코드로 프로그래밈을 하는 KPN(Ken's Programmingn Note)입니다. 항상 배우는 자세로 초심을 잃지않고 새로운 기술을 습득할 자세로 공부하고 공부한 것을 정리하는 웹사이트 입니다.</p>
+            <span>조현일(Ken's Programming Note)</span>
+          </div>
+          <div class="profile-right">
+            <div class="profile-msg">
+              <h2>Related Skills</h2>
+              <h3>HTML5, CSS3, javascript</h3>
+              <h3>Photoshop, Illustrator, XD, Premiere</h3>
+              <h3>React, Typescript</h3>
+              <h3>NodeJS, NextJS</h3>
+              <h3>Python, Django</h3>
+              <p></p>
+            </div>
+            <div class="profile-photo">
+              <img src="images/profile.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
     <!-- Section : Focus -->
     <section class="focus">
       <div class="inner">
@@ -182,29 +264,30 @@
             <div class="material-icons">
               settings
             </div>
-            <h3>Lorem, ipsum dolor.</h3>
+            <h3>파이어베이스 연동</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus fuga exercitationem quos tempora
+              Firebase를 활용한 로그인 구현
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Firestore DB로 공지사항 구현
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Storage를 이용한 이미지 업로드
+
             </p>
           </div>
           <div class="focus-item">
             <div class="material-icons">
-
               settings_accessibility
-
             </div>
-            <h3>Lorem, ipsum dolor.</h3>
+            <h3>포트폴리오 게시</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus fuga exercitationem quos tempora
+              과정 중에 배운기술을 집약하여 원페이지로 구성, 순수 HTML,CSS,JS만으로 프론트엔드 구현
             </p>
           </div>
           <div class="focus-item">
             <div class="material-icons">
               person
             </div>
-            <h3>Lorem, ipsum dolor.</h3>
+            <h3>스크롤 인터렉티브</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus fuga exercitationem quos tempora
+              스크롤 값을 구하여 인터렉티브한 페이지 구현, 동영상을 수백장의 이미지로 캡쳐하여 Canvas 렌더링
             </p>
           </div>
 
@@ -212,172 +295,154 @@
       </div>
     </section>
 
-    <!-- Section : Review -->
-    <section class="review">
-      <div class="inner">
-        <div class="headline-share">
-          <h1>고객들의 생생한 리뷰</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </p>
-        </div>
-        <div class="review-contents">
-
-          <div class="review-slider">
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat unde expedita odit accusamus dolorem iste blanditiis quod harum alias ad soluta nemo molestiae mollitia, id earum, quas consequatur tempora rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, at!
-              </p>
-              <p>
-                <span>조은성 대표</span>
-                Lorem, ipsum dolor.
-              </p>
+    <!-- Section : Notice -->
+    <section class="notice">
+      <div class="notice-line">
+        <div class="bg-left"></div>
+        <div class="bg-right"></div>
+        <div class="inner">
+          <div class="inner__left">
+            <h2>공지사항</h2>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#none">크리스마스 & 연말연시 매장 영업시간 안내</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">당첨자 발표 연말연시 행복하게 보내세요</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">코로나 극복이벤트</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#none">
+                    드디어 마스크 벗다
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat unde expedita odit accusamus dolorem iste blanditiis quod harum alias ad soluta nemo molestiae mollitia, id earum, quas consequatur tempora rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, at!
-              </p>
-              <p>
-                <span>조은성 대표</span>
-                Lorem, ipsum dolor.
-              </p>
-            </div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat unde expedita odit accusamus dolorem iste blanditiis quod harum alias ad soluta nemo molestiae mollitia, id earum, quas consequatur tempora rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, at!
-              </p>
-              <p>
-                <span>조은성 대표</span>
-                Lorem, ipsum dolor.
-              </p>
-            </div>
-
+            <a href="#none" class="notice-line__more">
+              <div class="material-icons">add_circle</div>
+            </a>
           </div>
+          <div class="inner__right">
+            <h2>관리자 글 작성하기</h2>
+            <div class="toggle-promotion">
+              <div class="material-icons">assignment_add</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promotion">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""/>
+              <div class="slide__box">
+                <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
+
+              </div>
+              <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" alt="기간 내 스타벅스 카드 e-Gift를 3만원 이상 선물 시, 아메리카노 e-쿠폰을 드립니다."/>
+              <div class="slide__box">
+                <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
+
+              </div>
+              <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="뉴이어 푸드와 제조 음료를 세트로 구매 시, 뉴이어 음료 BOGO(1+1) 쿠폰을 드립니다."/>
+              <div class="slide__box">
+                <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
+
+              </div>
+              <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="신년 MD 상품 포함 3만원 이상 구매 고객께 아메리카노(톨사이즈) 쿠폰을 드립니다."/>
+              <div class="slide__box">
+                <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
+
+              </div>
+              <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="2017 DIGITAL LUCKY DRAW 100% 당첨의 행운을 드립니다!"/>
+              <div class="slide__box">
+                <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
+
+              </div>
+              <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-prev">
+          <div class="material-icons">arrow_back</div>
+        </div>
+        <div class="swiper-next">
+          <div class="material-icons">arrow_forward</div>
         </div>
       </div>
     </section>
 
-    <!-- Section : Vision -->
-    <section class="vision">
-      <div class="inner-none">
-        <div class="vision-contents">
-          <div class="vision-item-desc">
-            <div class="vision-item-headline">
-              <h3>Lorem, ipsum.</h3>
-              <hr/>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Culpa explicabo maxime alias, molestias labore dolorem modi
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            quod suscipit inventore! Adipisci!
-              </p>
-            </div>
-          </div>
-          <div class="vision-item-photo">
-            <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""/>
-          </div>
-          <div class="vision-item-desc">
-            <div class="vision-item-headline">
-              <h3>Lorem, ipsum.</h3>
-              <hr/>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Culpa explicabo maxime alias, molestias labore dolorem modi
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            quod suscipit inventore! Adipisci!
-              </p>
-            </div>
-          </div>
-          <div class="vision-item-photo">
-            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" alt=""/>
-          </div>
-          <div class="vision-item-desc">
-            <div class="vision-item-headline">
-              <h3>Lorem, ipsum.</h3>
-              <hr/>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Culpa explicabo maxime alias, molestias labore dolorem modi
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            quod suscipit inventore! Adipisci!
-              </p>
-            </div>
-          </div>
-          <div class="vision-item-photo">
-            <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt=""/>
-          </div>
-        </div>
+    <!-- Youtube Video -->
+    <section class="youtube">
+      <div class="youtube__area">
+        <div id="player"></div>
       </div>
+      <div class="youtube__cover"></div>
+
     </section>
 
-    <!-- Section : Community -->
-    <section class="community">
+
+    <!--Section : links-->
+    <section class="links">
       <div class="inner">
-        <div class="headline-share">
-          <h1>KPN Community</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </p>
-        </div>
-        <div class="community-contents">
-          <div class="community-left">
-            <div class="community-big" onclick="location.href='#none'">
-              <img src="https://images.unsplash.com/photo-1661347332466-9b6897c93a2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-              <div class="community-headline">
-                <h2>Welcome Kes's Programming Note</h2>
-                <p>
-                  다같이 코로나 극복합시다
-                  <small class="date">Dec 24, 2020</small>
-                </p>
-                <a href="#none" class="btn btn--red">자세히 보기</a>
-              </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="https://fonts.google.com/" target="_blank">
+                <img src="./images/links_slide1.jpg" alt="대통령 표창"/></a>
             </div>
-          </div>
-          <div class="community-right">
-            <div class="community-items">
-              <div class="community-thum" onclick="location.href='#none'">
-                <div class="community-photo">
-                  <img src="https://images.unsplash.com/photo-1657299170964-205905bb0940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
-                  <span class="badge new">new issue</span>
-                </div>
-                <p>
-                  대박신화 ken's note
-                  <small class="date">Dec 11, 2022</small>
-                </p>
-              </div>
-              <div class="community-thum" onclick="location.href='#none'">
-                <div class="community-photo">
-                  <img src="https://images.unsplash.com/photo-1661831870991-570c7172edfb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"/>
-                  <span class="badge hot">hot issue</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet.
-                  <small class="date">Oct 21, 2022</small>
-                </p>
-              </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide2.jpg" alt="대통령 표창 (3년 연속)"/>
             </div>
-            <div class="community-items">
-              <div class="community-thum" onclick="location.href='#none'">
-                <div class="community-photo">
-                  <img src="https://images.unsplash.com/photo-1659536540455-161b929e650c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-                  <span class="badge new">new issue</span>
-                </div>
-                <p>
-                  대박신화 ken's note
-                  <small class="date">Nov 12, 2022</small>
-                </p>
-              </div>
-              <div class="community-thum">
-                <div class="community-photo" onclick="location.href='#none'">
-                  <img src="https://images.unsplash.com/photo-1661884643098-b809f0407d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-                  <span class="badge hot">hot issue</span>
-                </div>
-                <p>
-                  스타트업 CEO를 위한 사업 기획서 작성과 아이디어 도출 방법
-                  <small class="date">Oct 16, 2022</small>
-                </p>
-              </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide3.jpg" alt="우수사업주 인증"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide4.jpg" alt="경연대회 대상"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide5.jpg" alt="대한상의회장상"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide6.jpg" alt="기업사회공헌 활동 부문"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide7.jpg" alt="KSI 1위 (5년 연속)"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide8.jpg" alt="KS-SQI 1위 (5년 연속)"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide9.jpg" alt="커피전문점 부문 (4년 연속)"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/links_slide10.jpg" alt="동반성장 부문 (4년 연속)"/>
             </div>
           </div>
         </div>
-        <a href="#none" class="btn btn--red">read more new</a>
+
+        <div class="swiper-prev">
+          <span class="material-icons">arrow_back</span>
+        </div>
+        <div class="swiper-next">
+          <span class="material-icons">arrow_forward</span>
+        </div>
       </div>
     </section>
 
@@ -421,11 +486,11 @@
             <div class="address">
               <span>
                 Ken's Programming Note | 대표자 : 조현일 | 사업자번호 :
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                123-45-67890 사업자 정보 확인 | 개인정보보호책임자 : himzei@gmail.com
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            123-45-67890 사업자 정보 확인 | 개인정보보호책임자 : himzei@gmail.com
               </span>
               <span>
                 주소 : 대구광역시 동구 화랑로 525(용계동), 조경실습장 : 대구 동구 도동 806-21
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ㅣ 이메일: himzei@gmail.com
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ㅣ 이메일: himzei@gmail.com
               </span>
             </div>
           </div>
