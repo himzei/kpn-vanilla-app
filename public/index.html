@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ken의 프로그램 개발 노트</title>
+
+    <!-- 파비콘 -->
+    <link
+    rel="icon" href="./favicon.png">
+    <!-- reset CSS cdn -->
+    <link
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+
+    <!-- 구글폰트 : 나눔고딕 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet"/>
+
+    <!-- Google Material Icons -->
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="./js/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="./js/slick/slick.css"/>
+    <script src="./js/slick/slick.min.js"></script>
+
+    <!-- TypeIt -->
+    <script src="./js/typeit.min.js"></script>
+
+    <!-- 개인 제작 CSS -->
+    <link
+    rel="stylesheet" href="./css/main.css"/>
+
+    <!-- 개인제작 JS defer 속성 확인 -->
+    <script defer src="./js/main.js"></script>
+    <!-- 개인제작 jquery -->
+    <script defer src="./js/app.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="inner">
+        <a href="/">
+          <img src="./images/ken_logo.png" alt="Ken's Programming Note" class="logo">
+        </a>
+        <div class="sub-menu">
+          <ul class="menu">
+            <li>
+              <a href="#none">Sign In</a>
+            </li>
+            <li>
+              <a href="#none">My Note</a>
+            </li>
+            <li>
+              <a href="#none">Search a Note</a>
+            </li>
+          </ul>
+          <div class="search">
+            <input type="text"/>
+            <div class="material-icons">search</div>
+          </div>
+
+        </div>
+        <ul class="main-menu">
+          <li class="item">
+            <div class="item__name">Profile</div>
+          </li>
+          <li class="item">
+            <div class="item__name">Related Skills</div>
+            <div class="item__contents">
+              <div class="contents__menu">
+                <ul class="inner">
+                  <li>
+                    <h4>HTML,CSS,JS</h4>
+                  </li>
+                  <li>
+                    <h4>Photoshop</h4>
+                  </li>
+                  <li>
+                    <h4>Python,Django</h4>
+                  </li>
+                  <li>
+                    <h4>React,Typescript</h4>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item__name">Portfolio</div>
+            <div class="item__contents">
+              <div class="contents__menu">
+                <ul class="inner">
+                  <li>
+                    <h4>8월포폴</h4>
+                  </li>
+                  <li>
+                    <h4>9월포폴</h4>
+                  </li>
+                  <li>
+                    <h4>10월포폴</h4>
+                  </li>
+                  <li>
+                    <h4>11월포폴</h4>
+                  </li>
+                  <li>
+                    <h4>12월포폴</h4>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item__name">Responsbility</div>
+          </li>
+          <li class="item">
+            <div class="item__name">Sites</div>
+            <div class="item__contents">
+              <div class="contents__menu">
+                <ul class="inner">
+                  <li>
+                    <h4>디자인관련사이트</h4>
+                  </li>
+                  <li>
+                    <h4>프론트엔드사이트</h4>
+                  </li>
+                  <li>
+                    <h4>백엔드사이트</h4>
+                  </li>
+                  <li>
+                    <h4>기타참고사이트</h4>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item__name">
+              <a href="./pages/community/index.html">Community</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Section : Welcome -->
+    <section class="welcome">
+      <div class="slideshow">
+        <img src="https://images.unsplash.com/photo-1657299156594-50426d5125a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="slide1"/>
+        <img src="https://images.unsplash.com/photo-1598242930255-c25f98ff11e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1225&q=80" alt="slide2"/>
+        <img src="https://images.unsplash.com/photo-1618480487754-42a856ef3294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1096&q=80" alt="slide3"/>
+      </div>
+      <div class="welcome-heading">
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing.</span>
+        <h1>
+          Ken's Programming Note
+          <em id="typing"></em>
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, velit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, eveniet.
+        </p>
+        <div class="welcome-btns">
+          <a href="#none" class="btn btn--main">자세히보기</a>
+          <a href="#none" class="btn btn--red">자세히보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Focus -->
+    <section class="focus">
+      <div class="inner">
+        <div class="focus-contents">
+          <div class="focus-item">
+            <div class="material-icons">
+              settings
+            </div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus fuga exercitationem quos tempora
+            </p>
+          </div>
+          <div class="focus-item">
+            <div class="material-icons">
+
+              settings_accessibility
+
+            </div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus fuga exercitationem quos tempora
+            </p>
+          </div>
+          <div class="focus-item">
+            <div class="material-icons">
+              person
+            </div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus fuga exercitationem quos tempora
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Review -->
+    <section class="review">
+      <div class="inner">
+        <div class="headline-share">
+          <h1>고객들의 생생한 리뷰</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </p>
+        </div>
+        <div class="review-contents">
+
+          <div class="review-slider">
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat unde expedita odit accusamus dolorem iste blanditiis quod harum alias ad soluta nemo molestiae mollitia, id earum, quas consequatur tempora rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, at!
+              </p>
+              <p>
+                <span>조은성 대표</span>
+                Lorem, ipsum dolor.
+              </p>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat unde expedita odit accusamus dolorem iste blanditiis quod harum alias ad soluta nemo molestiae mollitia, id earum, quas consequatur tempora rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, at!
+              </p>
+              <p>
+                <span>조은성 대표</span>
+                Lorem, ipsum dolor.
+              </p>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat unde expedita odit accusamus dolorem iste blanditiis quod harum alias ad soluta nemo molestiae mollitia, id earum, quas consequatur tempora rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, at!
+              </p>
+              <p>
+                <span>조은성 대표</span>
+                Lorem, ipsum dolor.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Vision -->
+    <section class="vision">
+      <div class="inner-none">
+        <div class="vision-contents">
+          <div class="vision-item-desc">
+            <div class="vision-item-headline">
+              <h3>Lorem, ipsum.</h3>
+              <hr/>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Culpa explicabo maxime alias, molestias labore dolorem modi
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            quod suscipit inventore! Adipisci!
+              </p>
+            </div>
+          </div>
+          <div class="vision-item-photo">
+            <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""/>
+          </div>
+          <div class="vision-item-desc">
+            <div class="vision-item-headline">
+              <h3>Lorem, ipsum.</h3>
+              <hr/>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Culpa explicabo maxime alias, molestias labore dolorem modi
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            quod suscipit inventore! Adipisci!
+              </p>
+            </div>
+          </div>
+          <div class="vision-item-photo">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" alt=""/>
+          </div>
+          <div class="vision-item-desc">
+            <div class="vision-item-headline">
+              <h3>Lorem, ipsum.</h3>
+              <hr/>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Culpa explicabo maxime alias, molestias labore dolorem modi
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            quod suscipit inventore! Adipisci!
+              </p>
+            </div>
+          </div>
+          <div class="vision-item-photo">
+            <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt=""/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Community -->
+    <section class="community">
+      <div class="inner">
+        <div class="headline-share">
+          <h1>KPN Community</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </p>
+        </div>
+        <div class="community-contents">
+          <div class="community-left">
+            <div class="community-big" onclick="location.href='#none'">
+              <img src="https://images.unsplash.com/photo-1661347332466-9b6897c93a2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+              <div class="community-headline">
+                <h2>Welcome Kes's Programming Note</h2>
+                <p>
+                  다같이 코로나 극복합시다
+                  <small class="date">Dec 24, 2020</small>
+                </p>
+                <a href="#none" class="btn btn--red">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+          <div class="community-right">
+            <div class="community-items">
+              <div class="community-thum" onclick="location.href='#none'">
+                <div class="community-photo">
+                  <img src="https://images.unsplash.com/photo-1657299170964-205905bb0940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+                  <span class="badge new">new issue</span>
+                </div>
+                <p>
+                  대박신화 ken's note
+                  <small class="date">Dec 11, 2022</small>
+                </p>
+              </div>
+              <div class="community-thum" onclick="location.href='#none'">
+                <div class="community-photo">
+                  <img src="https://images.unsplash.com/photo-1661831870991-570c7172edfb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"/>
+                  <span class="badge hot">hot issue</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet.
+                  <small class="date">Oct 21, 2022</small>
+                </p>
+              </div>
+            </div>
+            <div class="community-items">
+              <div class="community-thum" onclick="location.href='#none'">
+                <div class="community-photo">
+                  <img src="https://images.unsplash.com/photo-1659536540455-161b929e650c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+                  <span class="badge new">new issue</span>
+                </div>
+                <p>
+                  대박신화 ken's note
+                  <small class="date">Nov 12, 2022</small>
+                </p>
+              </div>
+              <div class="community-thum">
+                <div class="community-photo" onclick="location.href='#none'">
+                  <img src="https://images.unsplash.com/photo-1661884643098-b809f0407d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+                  <span class="badge hot">hot issue</span>
+                </div>
+                <p>
+                  스타트업 CEO를 위한 사업 기획서 작성과 아이디어 도출 방법
+                  <small class="date">Oct 16, 2022</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#none" class="btn btn--red">read more new</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="inner">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="./images/ken_logo.png"/>
+          </div>
+          <div class="copyright">
+            <div class="policy-sns">
+              <div class="policy">
+                <span>
+                  <a href="#none">개인정보취급방침</a>
+                  <em>|</em>
+                  <a href="#none">이용약관</a>
+                </span>
+                <span>
+                  Copyright Ken's Programming Note. All right reserved.
+                </span>
+              </div>
+              <div class="sns">
+                <a href="#none">
+                  <i class="xi-facebook"></i>
+                </a>
+                <a href="#none">
+                  <i class="xi-instagram"></i>
+                </a>
+                <a href="#none">
+                  <i class="xi-kakaostory"></i>
+                </a>
+                <a href="#none">
+                  <i class="xi-naver"></i>
+                </a>
+                <a href="#none">
+                  <i class="xi-youtube-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="address">
+              <span>
+                Ken's Programming Note | 대표자 : 조현일 | 사업자번호 :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                123-45-67890 사업자 정보 확인 | 개인정보보호책임자 : himzei@gmail.com
+              </span>
+              <span>
+                주소 : 대구광역시 동구 화랑로 525(용계동), 조경실습장 : 대구 동구 도동 806-21
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ㅣ 이메일: himzei@gmail.com
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
