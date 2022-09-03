@@ -1,4 +1,5 @@
 /* Common CSS */
+
 body {
   /* 기본 설정 */
   color: #16213e;
@@ -6,6 +7,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
+  position: relative;
 }
 img {
   /*  모든 이미지 태그는 블록으로 처리 */
@@ -722,7 +724,55 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
 }
+
+.contact .section-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+}
+.contact .section-title .title-left {
+  position: relative;
+  /* overflow: hidden; */
+}
+.contact .section-title .title-right {
+  position: relative;
+  /* overflow: hidden; */
+}
+.contact .section-title .title-left .picture1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: -20px;
+  left: -40px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact .section-title .title-right .picture2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: -20px;
+  right: -40px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+/* .contact .section-title .title-right {
+  display: block;
+
+  width: 200px;
+  height: 200px;
+  left: 200px;
+  border-radius: 50%;
+  top: 0px;
+  right: -5px;
+  overflow: hidden;
+} */
+
 .contact .section-content {
   display: flex;
 }
@@ -941,4 +991,31 @@ footer {
 }
 .address span {
   display: block;
+}
+
+#to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 9;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#to-top .progress-group1,
+#to-top .progress-group2 {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e94560;
+}
+#to-top .progress-group2 {
+  display: none;
 }

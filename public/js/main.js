@@ -87,3 +87,58 @@ Ken's Programming Note(이하 ‘KPN’라 한다)는 개인정보 보호법 제
 const usercheck = document.querySelector("#usercheck");
 
 usercheck.value = checkedContents;
+
+// to-Top
+const text = document.querySelector("#to-top .progress-text");
+const badge = document.querySelector("#to-top img");
+const group1 = document.querySelector("#to-top .progress-group1");
+const group2 = document.querySelector("#to-top .progress-group2");
+
+function render(textPercent, rotateNum) {
+  text.innerText = textPercent + "%";
+  badge.style.transform = `rotate(${rotateNum}deg)`;
+}
+
+function getPercent() {
+  const scrollHeight = document.querySelector("body").offsetHeight;
+  const scrollRealHeight = scrollHeight - window.innerHeight;
+  const winScrollTop = window.pageYOffset;
+  const scrollPercent = (winScrollTop / scrollRealHeight) * 100;
+  const textPercent = Math.round(scrollPercent);
+  const rotateNum = (textPercent / 100) * 360;
+
+  render(textPercent, rotateNum);
+}
+
+document.addEventListener(
+  "scroll",
+  function () {
+    getPercent();
+  },
+  false
+);
+
+const toTopEl = document.querySelector("#to-top");
+toTopEl.addEventListener("click", function () {
+  gsap.to(window, 1.0, {
+    scrollTo: 0,
+  });
+});
+
+// floating 찾아오는길 메일문의
+function random(min, max) {
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+}
+function floatingObject(selector, delay, sizeX, sizeY) {
+  // gsap.to(요소, 시간, 옵션)
+  gsap.to(selector, random(1.5, 2.5), {
+    x: sizeX,
+    y: sizeY,
+    repeat: -1,
+    yoyo: true,
+    ease: Power2.easeInOut,
+    delay: random(0, delay),
+  });
+}
+floatingObject(".picture1", 1, 15, 20);
+floatingObject(".picture2", 0.8, 18, 12);
