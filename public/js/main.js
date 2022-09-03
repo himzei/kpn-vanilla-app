@@ -142,3 +142,108 @@ function floatingObject(selector, delay, sizeX, sizeY) {
 }
 floatingObject(".picture1", 1, 15, 20);
 floatingObject(".picture2", 0.8, 18, 12);
+
+// PortFolio 1
+
+var scrollBody = document.querySelector(".portfolio-contents");
+
+var scrollHeight;
+var sectionOffsetTop;
+var sectionRealHeight;
+var scrollRealHeight;
+let winScrollTop;
+let scrollPercent;
+
+var windowWidth = window.innerWidth;
+
+var mobileSize = 1024;
+var isMobile;
+
+var el = document.querySelector(".canvas_wrap");
+var canvas = document.createElement("canvas");
+var ctx = canvas.getContext("2d");
+var imgSrc = "images/seq/";
+var imgFormat = ".jpg";
+var imgLength = 116;
+var pcImgSize = [1920, 1080];
+var mobileImgSize = [640, 360];
+var imgWidth;
+var imgHeight;
+var imgArray = [];
+var imageIterlator = 0;
+
+function pfSetProperty1() {
+  scrollHeight = scrollBody.offsetHeight;
+  winScrollTop = window.pageYOffset;
+  sectionOffsetTop = scrollBody.getBoundingClientRect().top + winScrollTop;
+  scrollRealHeight = scrollHeight - window.innerHeight;
+  sectionScrollTop = winScrollTop - sectionOffsetTop;
+  scrollPercent = sectionScrollTop / scrollRealHeight;
+
+  isMobile = windowWidth > mobileImgSize[0] ? false : true;
+
+  imgWidth = !isMobile ? pcImgSize[0] : mobileImgSize[0];
+  imgHeight = !isMobile ? pcImgSize[1] : mobileImgSize[1];
+}
+
+function setCanvas() {
+  canvas.width = imgWidth;
+  canvas.height = imgHeight;
+}
+
+function renderCanvas(sequence) {
+  ctx.clearRect(0, 0, imgWidth, imgHeight);
+  ctx.drawImage(imgArray[sequence], 0, 0, imgWidth, imgHeight);
+}
+
+function scrollFunc() {
+  var sequence = Math.min(
+    imgLength,
+    Math.max(0, Math.round(imgLength * scrollPercent))
+  );
+
+  renderCanvas(sequence);
+}
+
+function bindEvent() {
+  window.addEventListener(
+    "scroll",
+    function () {
+      pfSetProperty1();
+      scrollFunc();
+    },
+    false
+  );
+  window.addEventListener(
+    "resize",
+    function () {
+      pfSetProperty1();
+      setCanvas();
+      scrollFunc();
+    },
+    false
+  );
+}
+
+function init() {
+  el.appendChild(canvas);
+
+  for (let i = 0; i <= imgLength; i++) {
+    var img = new Image();
+    var path = imgSrc + i + imgFormat;
+    img.src = path;
+
+    img.onload = function () {
+      imageIterlator += 1;
+      if (imageIterlator === imgLength) {
+        pfSetProperty1();
+        setCanvas();
+        bindEvent();
+        scrollFunc();
+      }
+    };
+    imgArray.push(img);
+  }
+}
+
+init();

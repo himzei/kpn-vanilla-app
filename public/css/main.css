@@ -648,11 +648,54 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
 
 /* Section : Portfolio */
 .portfolio {
-  height: 1000px;
+  padding: 80px 0;
+}
+.portfolio .portfolio-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 80px;
+  text-transform: uppercase;
+}
+
+.portfolio-contents {
+  height: 5000px;
+}
+.portfolio-contents .fix_wrap {
+  overflow: hidden;
+  position: sticky;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.portfolio-contents .fix_wrap .cont_box {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.portfolio-contents .fix_wrap .cont_box .canvas_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.portfolio-contents .fix_wrap .cont_box .canvas_wrap canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.portfolio-contents .fix_wrap .cont_box .canvas_wrap .no_canvas {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%);
 }
 
 /* Section : Faq */
-
 .faq {
   padding: 40px 0;
   background-image: url("../images/faq-bg.jpg");
@@ -761,17 +804,6 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
   border-radius: 50%;
   box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
-/* .contact .section-title .title-right {
-  display: block;
-
-  width: 200px;
-  height: 200px;
-  left: 200px;
-  border-radius: 50%;
-  top: 0px;
-  right: -5px;
-  overflow: hidden;
-} */
 
 .contact .section-content {
   display: flex;
