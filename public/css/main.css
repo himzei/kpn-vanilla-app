@@ -663,7 +663,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
 .portfolio-contents .fix_wrap {
   overflow: hidden;
   position: sticky;
-
+  position: -webkit-sticky;
   top: 0;
   left: 0;
   width: 100%;
