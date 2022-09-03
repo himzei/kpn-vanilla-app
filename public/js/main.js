@@ -162,7 +162,7 @@ var isMobile;
 var el = document.querySelector(".canvas_wrap");
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-var imgSrc = "images/seq/";
+var imgSrc = "../../public/images/seq/";
 var imgFormat = ".jpg";
 var imgLength = 116;
 var pcImgSize = [1920, 1080];
