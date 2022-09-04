@@ -162,7 +162,7 @@ var isMobile;
 var el = document.querySelector(".canvas_wrap");
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-var imgSrc = "./images/seq/";
+var imgSrc = "../../public/images/seq/";
 var imgFormat = ".jpg";
 var imgLength = 116;
 var pcImgSize = [1920, 1080];
@@ -247,3 +247,17 @@ function init() {
 }
 
 init();
+
+function popWrite() {
+  var popUrl = "./admin-write.html";
+  var popName = "관리자 글쓰기";
+  var popOption =
+    "width=640, height=480, top=100, left=100, scrollbars=yes, resizable=yes, titlebar=yes, status=yes";
+
+  window.open(popUrl, popName, popOption);
+}
+
+const pupAdminWrite = document.querySelector(
+  ".notice .notice-line .inner__right"
+);
+pupAdminWrite.addEventListener("click", popWrite);

@@ -65,6 +65,12 @@ s
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+      import {
+        getAuth,
+        signInWithPopup,
+        GoogleAuthProvider,
+      } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -81,9 +87,11 @@ s
       };
 
       // Initialize Firebase
-      export const app = firebase.initializeApp(firebaseConfig);
+      const app = firebase.initializeApp(firebaseConfig);
       // const analytics = getAnalytics(app);
       const db = app.firestore();
+      var provider = new firebase.auth.GoogleAuthProvider();
+
       db.collection("notices")
         .get()
         .then((notices) => {
@@ -91,6 +99,70 @@ s
             console.log(doc.data());
           });
         });
+
+      const KPN = "Ken's Programmingn Note";
+      const loginData = localStorage.getItem(KPN);
+      function login() {
+        if (loginData !== null) {
+          localStorage.removeItem(KPN);
+          window.location.reload();
+        } else {
+          firebase
+            .auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+              /** @type {firebase.auth.OAuthCredential} */
+              var credential = result.credential;
+
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              var token = credential.accessToken;
+              // The signed-in user info.
+              var user = result.user;
+
+              var displayName = user.displayName;
+              var email = user.email;
+              var photoURL = user.photoURL;
+              var uid = user.uid;
+
+              localStorage.setItem(
+                KPN,
+                JSON.stringify({
+                  uid,
+                  displayName,
+                  email,
+                  photoURL,
+                })
+              );
+              window.location.reload();
+              // ...
+            })
+            .catch((error) => {
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              // The email of the user's account used.
+              var email = error.email;
+              // The firebase.auth.AuthCredential type that was used.
+              var credential = error.credential;
+              // ...
+            });
+        }
+      }
+
+      const loginGoogle = document.querySelector("#loginGoogle");
+      loginGoogle.addEventListener("click", login);
+
+      if (loginData != null) {
+        const parsedLoginData = JSON.parse(loginData);
+        document.querySelector("#loginGoogle").innerText = "Logout";
+        document.querySelector(
+          "#loginMessage a"
+        ).innerText = `${parsedLoginData.displayName}님 반가워요`;
+
+        document.querySelector("#loginPhoto a").innerHTML = `
+          <img src="${parsedLoginData.photoURL}" width="25px" height="25px" style="border-radius: 50%; transform: translateY(-3px)" />
+        `;
+      }
     </script>
 
     <!-- lodash.js -->
@@ -162,11 +234,10 @@ s
         <div class="sub-menu">
           <ul class="menu">
             <li>
-              <a href="#none">Sign In</a>
+              <a href="#noen" id="loginGoogle">Log In with Google</a>
             </li>
-            <li>
-              <a href="#none">My Note</a>
-            </li>
+            <li id="loginMessage"><a href="#none"></a></li>
+            <li id="loginPhoto"><a href="#none"></a></li>
             <li>
               <a href="#none">Search a Note</a>
             </li>
