@@ -1,3 +1,29 @@
+const menuProfile  = document.querySelector("#menu_profile")
+const menuNotice = document.querySelector("#menu_notice")
+const menuPromotion = document.querySelector("#menu_promotion")
+const menuPortfolio1 = document.querySelector("#menu_portfolio1")
+const menuFaq = document.querySelector("#menu_faq")
+const menuContact = document.querySelector("#menu_contact")
+
+menuProfile.addEventListener("click", function(){
+  window.scrollTo({top: document.querySelector(".profile-access").offsetTop - 100, behavior: "smooth" })
+})
+menuNotice.addEventListener("click", function(){
+  window.scrollTo({top: document.querySelector(".notice").offsetTop - 120, behavior: "smooth" })
+})
+menuPromotion.addEventListener("click", function(){
+  window.scrollTo({top: document.querySelector(".youtube").offsetTop - 120, behavior: "smooth" })
+})
+menuPortfolio1.addEventListener("click", function(){
+  window.scrollTo({top: document.querySelector("#portfolio_sec1").offsetTop -150, behavior: "smooth" })
+})
+menuFaq.addEventListener("click", function(){
+  window.scrollTo({top: document.querySelector(".faq").offsetTop -120, behavior: "smooth" })
+})
+menuContact.addEventListener("click", function(){
+  window.scrollTo({top: document.querySelector(".contact").offsetTop -120, behavior: "smooth" })
+})
+
 // search input 이이콘 클릭시 placeholde
 const searchEl = document.querySelector(".search");
 const searchInputEl = searchEl.querySelector("input");

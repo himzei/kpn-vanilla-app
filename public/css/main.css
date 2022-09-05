@@ -228,15 +228,44 @@ header .main-menu .item .item__contents .contents__menu {
 }
 header .main-menu .item .item__contents .contents__menu > ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 20px 0;
 }
 header .main-menu .item .item__contents .contents__menu > ul > li {
-  width: 220px;
+  width: 320px;
 }
-header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+  padding: 3px 0 12px 0;
+  font-size: 14px;
+  color: #fff;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+  padding: 5px 0;
+  font-size: 12px;
+  color: #999;
   cursor: pointer;
-  color: lightgray;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+  /* color: #533483; */
+  color: #e94560;
+}
+
+header .main-menu .item .item__contents .contents__texture {
+  padding: 26px 0;
+  background-color: #0a2f5c;
+  font-size: 12px;
+  background-image: url("../images/main_menu_pattern.png");
+}
+
+header .main-menu .item .item__contents .contents__texture h4 {
+  color: #999;
+  font-weight: 700;
+  font-size: 18px;
+}
+header .main-menu .item .item__contents .contents__texture p {
+  
+  
+  margin: 4px 0 14px;
 }
 
 /* Section : Welcome */
@@ -742,8 +771,8 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
   cursor: pointer;
 }
 .faq-title:after {
-  content: "\f105";
-  font-family: fontawesome;
+  font-family: 'Material Icons';
+  content: "chevron_right";
   float: right;
   color: #444;
   transition: 0.35s;
@@ -768,41 +797,6 @@ header .main-menu .item .item__contents .contents__menu > ul > li h4:hover {
   background-attachment: fixed;
   background-size: cover;
   position: relative;
-}
-
-.contact .section-title {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 10;
-}
-.contact .section-title .title-left {
-  position: relative;
-  /* overflow: hidden; */
-}
-.contact .section-title .title-right {
-  position: relative;
-  /* overflow: hidden; */
-}
-.contact .section-title .title-left .picture1 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: -20px;
-  left: -40px;
-  border-radius: 50%;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.contact .section-title .title-right .picture2 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: -20px;
-  right: -40px;
-  border-radius: 50%;
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
 
 .contact .section-content {

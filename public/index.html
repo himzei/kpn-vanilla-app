@@ -2,44 +2,35 @@ s
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ken의 프로그램 개발 노트</title>
 
     <!-- 파비콘 -->
-    <link rel="icon" href="./favicon.png" />
+    <link
+    rel="icon" href="./favicon.ico"/>
 
     <!-- reset CSS cdn -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
-    />
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
 
     <!-- 구글폰트 : 나눔고딕 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin="crossorigin"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet"/>
 
     <!-- Google Material Icons -->
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="./js/slick/slick-theme.css" />
-    <link rel="stylesheet" href="./js/slick/slick.css" />
+    <link rel="stylesheet" href="./js/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="./js/slick/slick.css"/>
     <script src="./js/slick/slick.min.js"></script>
 
     <!-- TypeIt -->
@@ -47,29 +38,15 @@ s
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js"
-      integrity="sha512-GAEvFso2oksY5JFkHlrfLhZgAV6aL48qxnbxPnbKnNLeG/XsU/c0lh/g9gocZ2RtbRx6VDTqspPEy9ixWvbfzw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.min.js"
-      integrity="sha512-95HhZKEWw0vxywbO/5CJhf+KJqEDEmXGDeys3ylTMTuW50ccC26GcV7pPhTiYC8fH3jj0i4AwxRdIN5vfoLqmg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js" integrity="sha512-GAEvFso2oksY5JFkHlrfLhZgAV6aL48qxnbxPnbKnNLeG/XsU/c0lh/g9gocZ2RtbRx6VDTqspPEy9ixWvbfzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.min.js" integrity="sha512-95HhZKEWw0vxywbO/5CJhf+KJqEDEmXGDeys3ylTMTuW50ccC26GcV7pPhTiYC8fH3jj0i4AwxRdIN5vfoLqmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
-      import {
-        getAuth,
-        signInWithPopup,
-        GoogleAuthProvider,
-      } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+      import {initializeApp} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+      import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+      import {getAuth, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
@@ -83,7 +60,7 @@ s
         storageBucket: "ken-s-programming-note.appspot.com",
         messagingSenderId: "123105724625",
         appId: "1:123105724625:web:7c115e2fc1348a04eb5df0",
-        measurementId: "G-2YDRVHQFW6",
+        measurementId: "G-2YDRVHQFW6"
       };
 
       // Initialize Firebase
@@ -92,60 +69,44 @@ s
       const db = app.firestore();
       var provider = new firebase.auth.GoogleAuthProvider();
 
-      db.collection("notices")
-        .get()
-        .then((notices) => {
-          notices.forEach((doc) => {
-            console.log(doc.data());
-          });
+      db.collection("notices").get().then((notices) => {
+        notices.forEach((doc) => {
+          console.log(doc.data());
         });
+      });
 
       const KPN = "Ken's Programmingn Note";
-      const loginData = localStorage.getItem(KPN);
+      const loginData = sessionStorage.getItem(KPN);
       function login() {
         if (loginData !== null) {
-          localStorage.removeItem(KPN);
+          sessionStorage.removeItem(KPN);
           window.location.reload();
         } else {
-          firebase
-            .auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-              /** @type {firebase.auth.OAuthCredential} */
-              var credential = result.credential;
+          firebase.auth().signInWithPopup(provider).then((result) => { /** @type {firebase.auth.OAuthCredential} */
+            var credential = result.credential;
 
-              // This gives you a Google Access Token. You can use it to access the Google API.
-              var token = credential.accessToken;
-              // The signed-in user info.
-              var user = result.user;
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
 
-              var displayName = user.displayName;
-              var email = user.email;
-              var photoURL = user.photoURL;
-              var uid = user.uid;
+            var displayName = user.displayName;
+            var email = user.email;
+            var photoURL = user.photoURL;
+            var uid = user.uid;
 
-              localStorage.setItem(
-                KPN,
-                JSON.stringify({
-                  uid,
-                  displayName,
-                  email,
-                  photoURL,
-                })
-              );
-              window.location.reload();
-              // ...
-            })
-            .catch((error) => {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              // The email of the user's account used.
-              var email = error.email;
-              // The firebase.auth.AuthCredential type that was used.
-              var credential = error.credential;
-              // ...
-            });
+            sessionStorage.setItem(KPN, JSON.stringify({uid, displayName, email, photoURL}));
+            window.location.reload();
+            // ...
+          }).catch((error) => { // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
         }
       }
 
@@ -155,64 +116,41 @@ s
       if (loginData != null) {
         const parsedLoginData = JSON.parse(loginData);
         document.querySelector("#loginGoogle").innerText = "Logout";
-        document.querySelector(
-          "#loginMessage a"
-        ).innerText = `${parsedLoginData.displayName}님 반가워요`;
+        document.querySelector("#loginMessage a").innerText = `${
+          parsedLoginData.displayName
+        }님 반가워요`;
 
         document.querySelector("#loginPhoto a").innerHTML = `
-          <img src="${parsedLoginData.photoURL}" width="25px" height="25px" style="border-radius: 50%; transform: translateY(-3px)" />
+          <img src="${
+          parsedLoginData.photoURL
+        }" width="25px" height="25px" style="border-radius: 50%; transform: translateY(-3px)" />
         `;
       }
     </script>
 
     <!-- lodash.js -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
-      integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- GSAP CDN 자바스크립트로 에니메이션 처리 -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"
-      integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- GSAP : Scroll to Plugin -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js"
-      integrity="sha512-TxuhgzYZZCsKL8STS5wmzau5RF3EotX6lAOZPkOJwfy7q9fXMzhlEHfQI4iUuxVMgkbG5XUtzbjshNCKYL+VXw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js" integrity="sha512-TxuhgzYZZCsKL8STS5wmzau5RF3EotX6lAOZPkOJwfy7q9fXMzhlEHfQI4iUuxVMgkbG5XUtzbjshNCKYL+VXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- SWIPER -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- Scroll Magic -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
-      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- 다름 지도 API -->
-    <script
-      type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a60f38bb4b7268ee55ecd31736803de&libraries=services"
-    ></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a60f38bb4b7268ee55ecd31736803de&libraries=services"></script>
 
     <!-- 개인 제작 CSS -->
-    <link rel="stylesheet" href="./css/main.css" />
+    <link
+    rel="stylesheet" href="./css/main.css"/>
 
     <!-- 개인제작 JS defer 속성 확인 -->
     <script defer="defer" src="./js/main.js"></script>
@@ -220,111 +158,81 @@ s
     <script defer="defer" src="./js/app.js"></script>
     <!-- 유튜브 제작 -->
     <script defer src="./js/youtube.js"></script>
+    <!-- EmailJS 문의메일 보내기 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script defer src="./js/emailjs.js"></script>
   </head>
   <body>
     <!-- HEADER -->
     <header>
       <div class="inner">
         <a href="/">
-          <img
-            src="./images/ken_logo.png"
-            alt="Ken's Programming Note"
-            class="logo"
-        /></a>
+          <img src="./images/ken_logo.png" alt="Ken's Programming Note" class="logo"/></a>
         <div class="sub-menu">
           <ul class="menu">
-            <li>
-              <a href="#noen" id="loginGoogle">Log In with Google</a>
+            <li id="loginPhoto">
+              <a href="#none"></a>
             </li>
-            <li id="loginMessage"><a href="#none"></a></li>
-            <li id="loginPhoto"><a href="#none"></a></li>
+            <li id="loginMessage">
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none" id="loginGoogle">Log In with Google</a>
+            </li>
             <li>
               <a href="#none">Search a Note</a>
             </li>
           </ul>
           <div class="search">
-            <input type="text" />
+            <input type="text"/>
             <div class="material-icons">search</div>
           </div>
         </div>
         <ul class="main-menu">
           <li class="item">
-            <div class="item__name">Profile & skills</div>
+            <div class="item__name" id="menu_profile">
+              Profile & skills
+            </div>
           </li>
           <li class="item">
-            <div class="item__name">community & notices</div>
+            <div class="item__name" id="menu_notice">notices & galleries</div>
+          </li>
+          <li class="item">
+            <div class="item__name" id="menu_promotion">Promotional Video</div>
+          </li>
+          <li class="item">
+            <div class="item__name" id="menu_portfolio1">Portfolio</div>
             <div class="item__contents">
               <div class="contents__menu">
                 <ul class="inner">
                   <li>
-                    <h4>HTML,CSS,JS</h4>
+                    <h4>Portfolio 1</h4>
+                    <ul>
+                      <li>파이썬을 활용하여 동영상 이미지 추출 [참고사이트 링크]</li>
+                      <li>createElement("canvas")</li>
+                      <li>자바스크립트에서 스크롤 값 계산하기</li>
+                    </ul>
                   </li>
-                  <li>
-                    <h4>Photoshop</h4>
-                  </li>
-                  <li>
-                    <h4>Python,Django</h4>
-                  </li>
-                  <li>
-                    <h4>React,Typescript</h4>
-                  </li>
+
+
                 </ul>
+              </div>
+              <div class="contents__texture">
+                <div class="inner">
+                  <h4 class="new">Portfolio Clone</h4>
+                  <p>
+                    최신의 사이트 그리고 지디웹에서 인기있는 사이트를 골라 카피해보는 포트폴리오 입니다.
+                  </p>
+                </div>
               </div>
             </div>
           </li>
           <li class="item">
-            <div class="item__name">Promotional Video</div>
+            <div class="item__name" id="menu_faq">FAQ</div>
           </li>
-
           <li class="item">
-            <div class="item__name">Portfolio</div>
-            <div class="item__contents">
-              <div class="contents__menu">
-                <ul class="inner">
-                  <li>
-                    <h4>8월포폴</h4>
-                  </li>
-                  <li>
-                    <h4>9월포폴</h4>
-                  </li>
-                  <li>
-                    <h4>10월포폴</h4>
-                  </li>
-                  <li>
-                    <h4>11월포폴</h4>
-                  </li>
-                  <li>
-                    <h4>12월포폴</h4>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
+            <div class="item__name" id="menu_contact">CONTACT US</div>
 
-          <li class="item">
-            <div class="item__name">FAQ</div>
-          </li>
-
-          <li class="item">
-            <div class="item__name">CONTACT US</div>
-            <div class="item__contents">
-              <div class="contents__menu">
-                <ul class="inner">
-                  <li>
-                    <h4>디자인관련사이트</h4>
-                  </li>
-                  <li>
-                    <h4>프론트엔드사이트</h4>
-                  </li>
-                  <li>
-                    <h4>백엔드사이트</h4>
-                  </li>
-                  <li>
-                    <h4>기타참고사이트</h4>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </li>
         </ul>
       </div>
@@ -333,18 +241,9 @@ s
     <!-- Section : Welcome -->
     <section class="welcome">
       <div class="slideshow">
-        <img
-          src="https://images.unsplash.com/photo-1657299156594-50426d5125a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          alt="slide1"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1598242930255-c25f98ff11e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1225&q=80"
-          alt="slide2"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1618480487754-42a856ef3294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1096&q=80"
-          alt="slide3"
-        />
+        <img src="https://images.unsplash.com/photo-1657299156594-50426d5125a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="slide1"/>
+        <img src="https://images.unsplash.com/photo-1598242930255-c25f98ff11e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1225&q=80" alt="slide2"/>
+        <img src="https://images.unsplash.com/photo-1618480487754-42a856ef3294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1096&q=80" alt="slide3"/>
       </div>
       <div class="welcome-heading">
         <span>Lorem ipsum dolor, sit amet consectetur adipisicing.</span>
@@ -354,8 +253,8 @@ s
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus,
-          velit! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Saepe, eveniet.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    velit! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Saepe, eveniet.
         </p>
         <div class="welcome-btns">
           <a href="#none" class="btn btn--main">자세히보기</a>
@@ -369,13 +268,13 @@ s
       <div class="inner">
         <div class="profile-content">
           <div class="profile-left">
-            <img src="images/quotes.svg" />
+            <img src="images/quotes.svg"/>
             <h3>창의적인 생각, 기본에 충실한 코딩</h3>
             <p>
               창의적인 아이디어와 기본에 충실한 코드로 프로그래밈을 하는
-              KPN(Ken's Programmingn Note)입니다. 항상 배우는 자세로 초심을
-              잃지않고 새로운 기술을 습득할 자세로 공부하고 공부한 것을 정리하는
-              웹사이트 입니다.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     KPN(Ken's Programmingn Note)입니다. 항상 배우는 자세로 초심을
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   잃지않고 새로운 기술을 습득할 자세로 공부하고 공부한 것을 정리하는
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            웹사이트 입니다.
             </p>
             <span>조현일(Ken's Programming Note)</span>
           </div>
@@ -390,7 +289,7 @@ s
               <p></p>
             </div>
             <div class="profile-photo">
-              <img src="./images/profile.png" />
+              <img src="./images/profile.png"/>
             </div>
           </div>
         </div>
@@ -406,7 +305,7 @@ s
             <h3>파이어베이스 연동</h3>
             <p>
               Firebase를 활용한 로그인 구현 Firestore DB로 공지사항 구현
-              Storage를 이용한 이미지 업로드
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Storage를 이용한 이미지 업로드
             </p>
           </div>
           <div class="focus-item">
@@ -414,7 +313,7 @@ s
             <h3>포트폴리오 게시</h3>
             <p>
               과정 중에 배운기술을 집약하여 원페이지로 구성, 순수
-              HTML,CSS,JS만으로 프론트엔드 구현
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HTML,CSS,JS만으로 프론트엔드 구현
             </p>
           </div>
           <div class="focus-item">
@@ -422,7 +321,7 @@ s
             <h3>스크롤 인터렉티브</h3>
             <p>
               스크롤 값을 구하여 인터렉티브한 페이지 구현, 동영상을 수백장의
-              이미지로 캡쳐하여 Canvas 렌더링
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            이미지로 캡쳐하여 Canvas 렌더링
             </p>
           </div>
         </div>
@@ -449,7 +348,9 @@ s
                   <a href="#none">코로나 극복이벤트</a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="#none"> 드디어 마스크 벗다 </a>
+                  <a href="#none">
+                    드디어 마스크 벗다
+                  </a>
                 </div>
               </div>
             </div>
@@ -469,50 +370,35 @@ s
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img
-                src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                alt=""
-              />
+              <img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""/>
               <div class="slide__box">
                 <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
               </div>
               <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80"
-                alt="기간 내 스타벅스 카드 e-Gift를 3만원 이상 선물 시, 아메리카노 e-쿠폰을 드립니다."
-              />
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" alt="기간 내 스타벅스 카드 e-Gift를 3만원 이상 선물 시, 아메리카노 e-쿠폰을 드립니다."/>
               <div class="slide__box">
                 <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
               </div>
               <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="https://images.unsplash.com/photo-1586611292717-f828b167408c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-                alt="뉴이어 푸드와 제조 음료를 세트로 구매 시, 뉴이어 음료 BOGO(1+1) 쿠폰을 드립니다."
-              />
+              <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="뉴이어 푸드와 제조 음료를 세트로 구매 시, 뉴이어 음료 BOGO(1+1) 쿠폰을 드립니다."/>
               <div class="slide__box">
                 <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
               </div>
               <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                alt="신년 MD 상품 포함 3만원 이상 구매 고객께 아메리카노(톨사이즈) 쿠폰을 드립니다."
-              />
+              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="신년 MD 상품 포함 3만원 이상 구매 고객께 아메리카노(톨사이즈) 쿠폰을 드립니다."/>
               <div class="slide__box">
                 <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
               </div>
               <a href="javascript:void(0)" class="btn btn--red">자세히 보기</a>
             </div>
             <div class="swiper-slide">
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                alt="2017 DIGITAL LUCKY DRAW 100% 당첨의 행운을 드립니다!"
-              />
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="2017 DIGITAL LUCKY DRAW 100% 당첨의 행운을 드립니다!"/>
               <div class="slide__box">
                 <h2 class="title">2022년 9월 드디서 마스크 벗다</h2>
               </div>
@@ -540,14 +426,14 @@ s
 
     <!-- Section : Portfolio -->
     <section class="portfolio">
-      <div>
+      <div id="portfolio_sec1">
         <div class="portfolio-title">Portfolio1</div>
         <div class="portfolio-contents">
           <article class="fix_wrap">
             <div class="cont_box">
               <div class="canvas_wrap">
                 <figure class="no_canvas">
-                  <img src="./images/seq/0.jpg" alt="" />
+                  <img src="./images/seq/0.jpg" alt=""/>
                 </figure>
               </div>
               <p class="txt pos1">16인치 모니터</p>
@@ -568,308 +454,269 @@ s
             <h2>코드설명과 기술들을 알려드려요</h2>
             <p>
               FAQ로 많이 사용하는 아코디언 타입의 Jquery를 활용한 구현입니다.
-              아콘디언의 내용을 통해 홈페이지에서 사용된 대표적인 구현방법을
-              간략히 알려드리고자 합니다.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        아콘디언의 내용을 통해 홈페이지에서 사용된 대표적인 구현방법을
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        간략히 알려드리고자 합니다.
             </p>
           </div>
           <div class="faq-accordion">
-            <div class="faq-item active">
+            <div class="faq-item acitive">
               <div class="faq-title">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
+                HTML5, CSS3, Javascript로 프론트엔드 구현
               </div>
               <div class="faq-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-                ipsum culpa eos repellendus iusto cupiditate quas pariatur, id
-                reprehenderit doloribus dolore recusandae expedita reiciendis!
-                Necessitatibus sed numquam est sit assumenda!
+                전체적인 프론트엔드는 HTML5, CSS3, Javascript로 구현하려고 노력했고, 일부 Jquery를 이용하여 돋적인 부분을 구현함. FAQ와 Welcome Section의 슬라이더 부분만 Jquery로 구현, 추후 모든 부분을 Javascript로 구현 계획
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-title">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
+                Firebase로 백엔드 구현
               </div>
               <div class="faq-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Doloremque, laborum amet aliquam illo rem est voluptates! Illo
-                excepturi quo officiis, ducimus eligendi tenetur deserunt ad
-                voluptatibus ullam labore optio odio.
+                파이어베이스를 설치하영 public폴더내 모든 파일을 구성. firebase-storage, firebase-firestore, firebase-auth를 CDN을 불러와서 회원가입 및 로그인 구현하고 공지사항, 갤러리 게시판을 로그인 한 사람만 쓰고 읽기는 모든 사람이 가능하게 구현. 로그인해서 불러온 정보는 sessionStorage에 저장
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-title">
+                Youtube API를 통해 홈페이지 Promotional Video Section 구현
+              </div>
+              <div class="faq-desc">
+                유튜브에서 제공하는 API를 통해 개발자가 직접 동영상을 컨트롤 할 수 있도록 구현. 별도의 youtube.js 파일을 만들어 관리
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-title">
-                Lorem ipsum dolor, sit amet consectetur adipisicing.
+                다음지도 API를 통해 찾아오는길 구현
               </div>
               <div class="faq-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci, necessitatibus ea! Voluptate voluptas explicabo
-                reiciendis fuga voluptates adipisci tempore, quaerat ea rerum
-                esse dolorem illum! Odio tempora ducimus recusandae.
+                다음 개발자 페이지에서 API키를 발급 받아서 사용하고, 메인페이지 head 태그안에 다음지로를 사용할 수 있는 CDN를 삽입하고 페이지안에서 자바스크립트로 페이지 구현
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-title">
-                Lorem ipsum dolor, sit amet consectetur adipisicing.
+                EmailJS 무료 API를 통해 문의메일 보내기 구현
               </div>
               <div class="faq-desc">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Doloribus quasi deleniti perspiciatis possimus nam aperiam, iste
-                veritatis praesentium tenetur vel vitae voluptatem, distinctio
-                consectetur soluta quisquam nobis assumenda. Ut, ea?
+                EmailJS에서 회원가입 후 개인 API를 발급을 받아 사용. head 태그안에 cdn삽입후 js파일을 만들어서 코드 정리함. 전송버튼 클릭시 자바스크립트에서 input value 값을 받아서 emailjs.seng 매소드를 활용해서 내 메일로 전송되도록 구현.
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-title">
-                Lorem ipsum dolor sit amet consectetur.
+                페이지 탑으로 보내기 버튼
               </div>
               <div class="faq-desc">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
-                quas vitae laudantium nostrum velit fugiat ratione accusamus,
-                eveniet reprehenderit, nesciunt assumenda voluptates natus,
-                obcaecati harum perspiciatis? Quae harum culpa quas.
+                포토샵으로 배지를 만들어서 png파일로 저장. 자바스크립트를 활용해서 body의 전체크기 값을 구한후 화면사이즈를 빼면 스크롤 하는 거리가 나온다. 스크롤 할때 마다 거리값을 배지의 퍼센트 부분에 렌더링한다. 배지의 돌아가는 값은 동일한 스크롤 값을 이용하여 CSS의 rotate 값으로 넣어준다.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-title">
+                Swiper JS를 활용한 슬라이더 구성
+              </div>
+              <div class="faq-desc">
+                Notices & Galleries와 footer의 링크는 Swiper JS라이브러리를 통해서 구현. CDN을 head 태그안에 넣고 new Swiper('선택자', {옵션})으로 코드정리
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-title">
+                Portfolio 1 코드설명
+              </div>
+              <div class="faq-desc">
+                동영상을 프레임별로 이미지를 추출하여 폴더에 저장한다. section height값을 대략 5000px로 설정하고 섹션안에 canvas를 만들어 준 다음 그 위에 추출한 이미지를 뿌려준다. 캔버스를 둘러싸고 있는 태그는 position sticky 해주고 움직이지 않게 해준다. 자바스크립트로 스크롤 값을 계산하고 해당스크롤로 이동을 하면 이미지를 렌더링 해준다.
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div class="section-title"></section>
 
-    <!-- Section : Contact -->
-    <section class="contact">
-      <div class="inner">
-        <div class="section-content">
-          <div class="content-left">
-            <div id="map"></div>
-          </div>
-          <div class="content-right">
-            <form action="">
-              <div class="input-field">
-                <input type="name" id="username" required /><span>이름</span>
-              </div>
-              <div class="input-field">
-                <input
-                  type="email"
-                  id="userid"
-                  autocomplete="off"
-                  required
-                /><span>이메일</span>
-              </div>
-              <div class="input-field">
-                <input
-                  type="text"
-                  id="usephone"
-                  required
-                  maxlength="12"
-                  minlength="8"
-                />
-                <span>전화번호</span>
-              </div>
-              <div class="input-field">
-                <textarea
-                  name="usermemo"
-                  id="usermemo"
-                  cols="30"
-                  rows="6"
-                  required
-                ></textarea>
-                <span>문의사항</span>
-              </div>
-              <div class="input-field">
-                <textarea
-                  name="usercheck"
-                  id="usercheck"
-                  cols="30"
-                  rows="4"
-                  required
-                >
-                </textarea>
-              </div>
+      <!-- Section : Contact -->
+      <section class="contact">
+        <div class="inner">
 
-              <div class="add-info">
-                <label>
-                  <input type="checkbox" id="save-email" /><em></em
-                  ><span>개인정보 수집 및 이용에 동의합니다.</span>
-                </label>
-              </div>
-              <div class="button-field">
-                <input
-                  type="submit"
-                  value="문의하기"
-                  class="btn btn--red"
-                  id="login-btn"
-                />
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="section-title">
-          <div class="title-left">
-            <img src="./images/contact-map.jpg" alt="" class="picture1" />
-          </div>
-          <div class="title-right">
-            <img src="./images/contact-email.jpg" alt="" class="picture2" />
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="section-content">
+            <div class="content-left">
+              <div id="map"></div>
+            </div>
+            <div class="content-right">
+              <form action="">
+                <div class="input-field">
+                  <input type="name" id="username" required/><span>이름</span>
+                </div>
+                <div class="input-field">
+                  <input type="email" id="useremail" autocomplete="off" required/><span>이메일</span>
+                </div>
+                <div class="input-field">
+                  <input type="text" id="userphone" required maxlength="12" minlength="8"/>
+                  <span>전화번호</span>
+                </div>
+                <div class="input-field">
+                  <textarea name="usermemo" id="usermemo" cols="30" rows="6" required></textarea>
+                  <span>문의사항</span>
+                </div>
+                <div class="input-field">
+                  <textarea name="usercheck" id="usercheck" cols="30" rows="4" required></textarea>
+                </div>
 
-    <!--Section : links-->
-    <section class="links">
-      <div class="inner">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="https://www.gdweb.co.kr/main/index.asp" target="_blank">
-                <img src="./images/links-slide1.jpg" alt="지디웹"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://fonts.google.com/" target="_blank">
-                <img src="./images/links-slide2.jpg" alt="구글폰트"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://firebase.google.com/?hl=ko" target="_blank">
-                <img src="./images/links-slide3.jpg" alt="Firebase"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://www.netlify.com/" target="_blank">
-                <img src="./images/links-slide4.jpg" alt="Netlify"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://www.heroku.com/" target="_blank">
-                <img src="./images/links-slide5.jpg" alt="Heroku"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://nodejs.org/ko/" target="_blank">
-                <img src="./images/links-slide6.jpg" alt="Node JS"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://ko.reactjs.org/" target="_blank">
-                <img src="./images/links-slide7.jpg" alt="React JS"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://www.typescriptlang.org/" target="_blank">
-                <img src="./images/links-slide8.jpg" alt="Typescript"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://graphql.org/" target="_blank">
-                <img src="./images/links-slide9.jpg" alt="Graphql"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://www.mongodb.com/" target="_blank">
-                <img src="./images/links-slide10.jpg" alt="Mongo DB"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://www.python.org/" target="_blank">
-                <img src="./images/links-slide11.jpg" alt="Python"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://aws.amazon.com/ko/?nc2=h_lg" target="_blank">
-                <img src="./images/links-slide12.jpg" alt="Amazon Web Service"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://tailwindcss.com/" target="_blank">
-                <img src="./images/links-slide13.jpg" alt="Tailwind CSS"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://nestjs.com/" target="_blank">
-                <img src="./images/links-slide14.jpg" alt="Nest JS"
-              /></a>
-            </div>
-            <div class="swiper-slide">
-              <a href="https://nextjs.org/" target="_blank">
-                <img src="./images/links-slide15.jpg" alt="Next JS"
-              /></a>
+                <div class="add-info">
+                  <label>
+                    <input type="checkbox" id="save-email"/><em></em>
+                    <span>개인정보 수집 및 이용에 동의합니다.</span>
+                  </label>
+                </div>
+                <div class="button-field">
+                  <input type="submit" value="문의하기" class="btn btn--red" id="login-btn"/>
+                </div>
+              </form>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-prev">
-          <span class="material-icons">arrow_back</span>
         </div>
-        <div class="swiper-next">
-          <span class="material-icons">arrow_forward</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer>
+      <!--Section : links-->
+      <section class="links">
+        <div class="inner">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="https://www.gdweb.co.kr/main/index.asp" target="_blank">
+                  <img src="./images/links-slide1.jpg" alt="지디웹"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://fonts.google.com/" target="_blank">
+                  <img src="./images/links-slide2.jpg" alt="구글폰트"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://firebase.google.com/?hl=ko" target="_blank">
+                  <img src="./images/links-slide3.jpg" alt="Firebase"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://www.netlify.com/" target="_blank">
+                  <img src="./images/links-slide4.jpg" alt="Netlify"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://www.heroku.com/" target="_blank">
+                  <img src="./images/links-slide5.jpg" alt="Heroku"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://nodejs.org/ko/" target="_blank">
+                  <img src="./images/links-slide6.jpg" alt="Node JS"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://ko.reactjs.org/" target="_blank">
+                  <img src="./images/links-slide7.jpg" alt="React JS"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://www.typescriptlang.org/" target="_blank">
+                  <img src="./images/links-slide8.jpg" alt="Typescript"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://graphql.org/" target="_blank">
+                  <img src="./images/links-slide9.jpg" alt="Graphql"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://www.mongodb.com/" target="_blank">
+                  <img src="./images/links-slide10.jpg" alt="Mongo DB"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://www.python.org/" target="_blank">
+                  <img src="./images/links-slide11.jpg" alt="Python"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://aws.amazon.com/ko/?nc2=h_lg" target="_blank">
+                  <img src="./images/links-slide12.jpg" alt="Amazon Web Service"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://tailwindcss.com/" target="_blank">
+                  <img src="./images/links-slide13.jpg" alt="Tailwind CSS"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://nestjs.com/" target="_blank">
+                  <img src="./images/links-slide14.jpg" alt="Nest JS"/></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://nextjs.org/" target="_blank">
+                  <img src="./images/links-slide15.jpg" alt="Next JS"/></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-prev">
+            <span class="material-icons">arrow_back</span>
+          </div>
+          <div class="swiper-next">
+            <span class="material-icons">arrow_forward</span>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
-      <div class="inner">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <img src="./images/ken_logo.png" />
-          </div>
-          <div class="copyright">
-            <div class="policy-sns">
-              <div class="policy">
-                <span>
-                  <a href="#none">개인정보취급방침</a>
-                  <em>|</em>
-                  <a href="#none">이용약관</a>
-                </span>
-                <span>
-                  Copyright Ken's Programming Note. All right reserved.
-                </span>
-              </div>
-              <div class="sns">
-                <a href="#none">
-                  <i class="xi-facebook"></i>
-                </a>
-                <a href="#none">
-                  <i class="xi-instagram"></i>
-                </a>
-                <a href="#none">
-                  <i class="xi-kakaostory"></i>
-                </a>
-                <a href="#none">
-                  <i class="xi-naver"></i>
-                </a>
-                <a href="#none">
-                  <i class="xi-youtube-play"></i>
-                </a>
-              </div>
+      <footer>
+        <!-- Footer -->
+        <div class="inner">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="./images/ken_logo.png"/>
             </div>
-            <div class="address">
-              <span>
-                Ken's Programming Note | 대표자 : 조현일 | 사업자번호 :
-                123-45-67890 사업자 정보 확인 | 개인정보보호책임자 :
-                himzei@gmail.com
-              </span>
-              <span>
-                주소 : 대구광역시 동구 화랑로 525(용계동), 조경실습장 : 대구
-                동구 도동 806-21 ㅣ 이메일: himzei@gmail.com
-              </span>
+            <div class="copyright">
+              <div class="policy-sns">
+                <div class="policy">
+                  <span>
+                    <a href="#none">개인정보취급방침</a>
+                    <em>|</em>
+                    <a href="#none">이용약관</a>
+                  </span>
+                  <span>
+                    Copyright Ken's Programming Note. All right reserved.
+                  </span>
+                </div>
+                <div class="sns">
+                  <a href="#none">
+                    <i class="xi-facebook"></i>
+                  </a>
+                  <a href="#none">
+                    <i class="xi-instagram"></i>
+                  </a>
+                  <a href="#none">
+                    <i class="xi-kakaostory"></i>
+                  </a>
+                  <a href="#none">
+                    <i class="xi-naver"></i>
+                  </a>
+                  <a href="#none">
+                    <i class="xi-youtube-play"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="address">
+                <span>
+                  Ken's Programming Note | 대표자 : 조현일 | 사업자번호 :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            123-45-67890 사업자 정보 확인 | 개인정보보호책임자 :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            himzei@gmail.com
+                </span>
+                <span>
+                  주소 : 대구광역시 동구 화랑로 525(용계동), 조경실습장 : 대구
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            동구 도동 806-21 ㅣ 이메일: himzei@gmail.com
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
 
-    <!-- to-Top -->
+      <!-- to-Top -->
 
-    <div id="to-top">
-      <img src="./images/to-top.png" alt="" />
-      <div class="progress-group1">
-        <div class="material-icons active">arrow_upward</div>
-        <div class="progress-text">0%</div>
+      <div id="to-top">
+        <img src="./images/to-top.png" alt=""/>
+        <div class="progress-group1">
+          <div class="material-icons active">arrow_upward</div>
+          <div class="progress-text">0%</div>
+        </div>
+        <div class="progress-group2">
+          <div class="material-icons">keyboard_double_arrow_down</div>
+          <div class="progress-scroll">SCROLL</div>
+        </div>
       </div>
-      <div class="progress-group2">
-        <div class="material-icons">keyboard_double_arrow_down</div>
-        <div class="progress-scroll">SCROLL</div>
-      </div>
-    </div>
+    </body>
   </body>
 </html>
