@@ -4,7 +4,7 @@ $(function () {
     infinite: true,
     dots: false,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     fade: true,
     speed: 1000,
     pauseOnHover: false,
@@ -12,8 +12,8 @@ $(function () {
 
   // Typing it
   $("#typing").typeIt({
-    strings: ["기본에 충실한", "열정적으로", "고객과의 약속"],
-    speed: 100,
+    strings: ["기본에 충실한!", "처음과 같은 마음으로!!", "다음 코드는? ..."],
+    speed: 300,
     autoStart: true,
     breakLines: false,
   });
