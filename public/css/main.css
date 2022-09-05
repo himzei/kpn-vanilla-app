@@ -219,9 +219,21 @@ header .main-menu .item .item__contents {
   position: fixed;
   left: 0;
   display: none;
+  
+  animation: ttb 0.4s ease-in-out both;
 }
 header .main-menu .item:hover .item__contents {
   display: block;
+}
+@keyframes ttb {
+  0%{
+    opacity: 0;
+    
+  }
+  100%{
+    opacity: 1;
+    
+  }
 }
 header .main-menu .item .item__contents .contents__menu {
   background-color: #0f3460;
