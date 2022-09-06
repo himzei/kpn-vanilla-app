@@ -71,7 +71,6 @@ a:visited {
   background-color: #e94560;
 }
 .btn.btn--white {
-  
   background-color: #fff;
 }
 .btn.btn--white:hover {
@@ -97,6 +96,36 @@ a:visited {
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(45deg, #e66465, #9198e5);
+}
+
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
+}
+.back-to-position.to-right {
+  transform: translateX(-150px);
+}
+.back-to-position.to-left {
+  transform: translateX(150px);
+}
+.back-to-position.to-bottom {
+  transform: translateY(-150px);
+}
+.show .back-to-position {
+  opacity: 1;
+  transform: translateX(0);
+}
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: 0.3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: 0.6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: 0.9s;
 }
 
 /* HEADER */
@@ -198,7 +227,6 @@ header .main-menu {
   font-size: 12px;
 }
 
-
 header .main-menu .item .item__name,
 header .main-menu .item .item__name a {
   padding: 10px 20px 25px 20px;
@@ -224,13 +252,11 @@ header .main-menu .item:hover .item__contents {
   display: block;
 }
 @keyframes ttb {
-  0%{
+  0% {
     opacity: 0;
-    
   }
-  100%{
+  100% {
     opacity: 1;
-    
   }
 }
 header .main-menu .item .item__contents .contents__menu {
@@ -273,8 +299,6 @@ header .main-menu .item .item__contents .contents__texture h4 {
   font-size: 18px;
 }
 header .main-menu .item .item__contents .contents__texture p {
-  
-  
   margin: 4px 0 14px;
 }
 
@@ -293,7 +317,6 @@ header .main-menu .item .item__contents .contents__texture p {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  
 }
 .welcome-heading {
   position: absolute;
@@ -320,7 +343,7 @@ header .main-menu .item .item__contents .contents__texture p {
   margin-top: 10px;
   font-style: normal;
   font-weight: 700;
-  color: rgba(255, 255, 255, 1)
+  color: rgba(255, 255, 255, 1);
 }
 .welcome-heading p {
   padding: 0 50px;
@@ -701,7 +724,7 @@ header .main-menu .item .item__contents .contents__texture p {
 }
 
 .portfolio-contents {
-  height: 5000px;
+  height: 4000px;
 }
 .portfolio-contents .fix_wrap {
   overflow: hidden;
@@ -736,6 +759,60 @@ header .main-menu .item .item__contents .contents__texture p {
   width: 1920px;
   height: 1080px;
   transform: translate(-50%, -50%);
+}
+
+/* Section : Protfolio2 */
+.portfolio2 {
+  height: 4000px;
+  padding: 80px 0;
+  background: tomato;
+}
+
+/* 타이틀 */
+.fix_tit {
+  font-family: "NotoB";
+  position: sticky;
+  z-index: 20;
+  font-size: 180px;
+  line-height: 1;
+  color: #000;
+}
+.fix_tit span {
+  font-family: "NotoM";
+  position: sticky;
+  font-size: 30px;
+  border-bottom: 3px solid rgba(000, 000, 000, 0.6);
+}
+
+/* SVG */
+.svg_wrap {
+  z-index: 30;
+  width: 1920px;
+  height: 1080px;
+}
+.svg_wrap #portfolio2_svg {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+
+  fill: none;
+  stroke: #555;
+  stroke-width: 4;
+  background-color: orange;
+}
+
+.video_wrap {
+  position: sticky;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  /* opacity: 0; */
+  transition: opacity 0.4s;
+  background-color: blue;
+}
+.video_wrap video {
+  width: 100%;
 }
 
 /* Section : Faq */
@@ -785,7 +862,7 @@ header .main-menu .item .item__contents .contents__texture p {
   cursor: pointer;
 }
 .faq-title:after {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   content: "chevron_right";
   float: right;
   color: #444;

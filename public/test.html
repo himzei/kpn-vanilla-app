@@ -1,91 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- reset CSS cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
     <style>
-
-      .tab-container {
-        width: 100%;
-        height: 100px;
-        background-color: blue;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 2000px 0;
+      }
+      .wrap {
+        width: 1100px;
+        margin: 0 auto;
+      }
+      .header {
+        height: 200px;
+        background: palegreen;
+      }
+      .content {
         position: relative;
       }
-      .tab-menu {
-        width: 640px;
-        margin: 0 auto;
-      }
-      ul.items {
-        display: flex;
-        position: absolute;
-        width: inherit;
-        bottom: 0;
-        background-color: red;
-      }
-      ul.items li {
-        width: 50%;
-        padding: 10px 5px;
-        text-align: center;
-        list-style: none;
-      }
-      .items .item .item__name {
-        padding: 10px 20px;
-        font-family: Arial, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        cursor: pointer;
-      }
-
-      .items .item .item__contents {
-        position: fixed;
-        width: 100%;
-        left: 0;
-
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      .items .item:hover .item__contents {
+      .content:after {
         display: block;
-        display: flex;
-        flex-direction: column;
+        clear: both;
+        content: "";
       }
-      .item__contents-container {
-        width: 640px;
-        margin: 0 auto;
+      .main {
+        float: left;
+        margin-right: 10px;
+        background: skyblue;
+        width: 790px;
+        height: 1500px;
+      }
+      .wing {
+        overflow: hidden;
+      }
+      .wing .inner {
+        width: 300px;
+        height: 300px;
+        background: plum;
+      }
+      /* 스크롤시 고정 될 윙배너 css */
+      .wing.fixed .inner {
+        position: sticky;
+        top: 0;
       }
     </style>
   </head>
   <body>
-    <div class="tab-container">
-      <div class="tab-menu">
-        <ul class="items">
-          <li class="item">
-            <div class="item__name">notices</div>
-            <div class="item__contents">
-              <div class="item__contents-container">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-              </div>
-            </div>
-          </li>
-          <li class="item">
-            <div class="item__name">galleries</div>
-            <div class="item__contents">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-            </div>
-          </li>
-        </ul>
+    <div class="wrap">
+      <div class="header">Header</div>
+
+      <div class="content">
+        <div class="main">Main Area</div>
+
+        <div class="wing">
+          <div class="inner">Wing Banner</div>
+        </div>
       </div>
     </div>
+    <script>
+      const content = document.querySelector(".content");
+      const wing = document.querySelector(".wing");
+
+      const contentTop = content.getBoundingClientRect().top + window.scrollY;
+      const contentBottom =
+        content.getBoundingClientRect().bottom + window.scrollY;
+      console.log(wing.offsetHeight);
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > contentTop && window.scrollY < contentBottom) {
+          wing.classList.add("fixed");
+        } else {
+          wing.classList.remove("fixed");
+        }
+      });
+    </script>
   </body>
 </html>

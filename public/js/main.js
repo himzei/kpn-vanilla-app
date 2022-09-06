@@ -1,37 +1,61 @@
-const menuProfile  = document.querySelector("#menu_profile")
-const menuNotice = document.querySelector("#menu_notice")
-const menuPromotion = document.querySelector("#menu_promotion")
-const menuPortfolio1 = document.querySelector("#menu_portfolio1")
-const menuFaq = document.querySelector("#menu_faq")
-const menuContact = document.querySelector("#menu_contact")
-const welcomeBtn1 = document.querySelector("#welcome-btn1")
-const welcomeBtn2 = document.querySelector("#welcome-btn2")
+const menuProfile = document.querySelector("#menu_profile");
+const menuNotice = document.querySelector("#menu_notice");
+const menuPromotion = document.querySelector("#menu_promotion");
+const menuPortfolio1 = document.querySelector("#menu_portfolio1");
+const menuFaq = document.querySelector("#menu_faq");
+const menuContact = document.querySelector("#menu_contact");
+const welcomeBtn1 = document.querySelector("#welcome-btn1");
+const welcomeBtn2 = document.querySelector("#welcome-btn2");
 
-menuProfile.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector(".profile-access").offsetTop - 100, behavior: "smooth" })
-})
-menuNotice.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector(".notice").offsetTop - 120, behavior: "smooth" })
-})
-menuPromotion.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector(".youtube").offsetTop - 120, behavior: "smooth" })
-})
-menuPortfolio1.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector("#portfolio_sec1").offsetTop -150, behavior: "smooth" })
-})
-menuFaq.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector(".faq").offsetTop -120, behavior: "smooth" })
-})
-menuContact.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector(".contact").offsetTop -120, behavior: "smooth" })
-})
-welcomeBtn1.addEventListener("click", function(){
-  window.scrollTo({top: document.querySelector(".contact").offsetTop -120, behavior: "smooth" })
-})
-welcomeBtn2.addEventListener("click", function(){
-  console.log("click")
-  window.scrollTo({top: document.querySelector("#portfolio_sec1").offsetTop -120, behavior: "smooth" })
-})
+menuProfile.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector(".profile-access").offsetTop - 100,
+    behavior: "smooth",
+  });
+});
+menuNotice.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector(".notice").offsetTop - 120,
+    behavior: "smooth",
+  });
+});
+menuPromotion.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector(".youtube").offsetTop - 120,
+    behavior: "smooth",
+  });
+});
+menuPortfolio1.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector("#portfolio_sec1").offsetTop - 150,
+    behavior: "smooth",
+  });
+});
+menuFaq.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector(".faq").offsetTop - 120,
+    behavior: "smooth",
+  });
+});
+menuContact.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector(".contact").offsetTop - 120,
+    behavior: "smooth",
+  });
+});
+welcomeBtn1.addEventListener("click", function () {
+  window.scrollTo({
+    top: document.querySelector(".contact").offsetTop - 120,
+    behavior: "smooth",
+  });
+});
+welcomeBtn2.addEventListener("click", function () {
+  console.log("click");
+  window.scrollTo({
+    top: document.querySelector("#portfolio_sec1").offsetTop - 120,
+    behavior: "smooth",
+  });
+});
 
 // search input 이이콘 클릭시 placeholde
 const searchEl = document.querySelector(".search");
@@ -198,7 +222,7 @@ var el = document.querySelector(".canvas_wrap");
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 // 상대경로로 설정할 경우 DEPLOY에서 먹지 않음
-var githubPath = "https://himzei.github.io/kpn-vanilla-app/"
+var githubPath = "https://himzei.github.io/kpn-vanilla-app/";
 var imgSrc = githubPath + "public/images/seq/";
 var imgFormat = ".jpg";
 var imgLength = 116;
@@ -298,3 +322,14 @@ const pupAdminWrite = document.querySelector(
   ".notice .notice-line .inner__right"
 );
 pupAdminWrite.addEventListener("click", popWrite);
+
+// ScrollMagic
+const spyEls = document.querySelectorAll("section.scroll-spy");
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl,
+    triggerHook: 0.9,
+  })
+    .setClassToggle(spyEl, "show")
+    .addTo(new ScrollMagic.Controller());
+});

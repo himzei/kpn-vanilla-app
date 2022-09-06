@@ -156,8 +156,10 @@ s
     <script defer="defer" src="./js/main.js"></script>
     <!-- 개인제작 jquery -->
     <script defer="defer" src="./js/app.js"></script>
+    <script defer src="./js/portfolio2.js"></script>
     <!-- 유튜브 제작 -->
     <script defer src="./js/youtube.js"></script>
+    
     <!-- EmailJS 문의메일 보내기 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script defer src="./js/emailjs.js"></script>
@@ -264,10 +266,10 @@ s
     </section>
 
     <!-- Section : Profile -->
-    <section class="profile-access">
+    <section class="profile-access scroll-spy">
       <div class="inner">
         <div class="profile-content">
-          <div class="profile-left">
+          <div class="profile-left back-to-position to-right delay-2">
             <img src="images/quotes.svg"/>
             <h3>창의적인 생각, 기본에 충실한 코딩</h3>
             <p>
@@ -279,7 +281,7 @@ s
             <span>조현일(Ken's Programming Note)</span>
           </div>
           <div class="profile-right">
-            <div class="profile-msg">
+            <div class="profile-msg back-to-position to-left delay-3">
               <h2>Related Skills</h2>
               <h3>HTML5, CSS3, javascript</h3>
               <h3>Photoshop, Illustrator, XD, Premiere</h3>
@@ -288,7 +290,7 @@ s
               <h3>Python, Django</h3>
               <p></p>
             </div>
-            <div class="profile-photo">
+            <div class="profile-photo back-to-position to-left delay-1">
               <img src="./images/profile.png"/>
             </div>
           </div>
@@ -297,10 +299,10 @@ s
     </section>
 
     <!-- Section : Focus -->
-    <section class="focus">
+    <section class="focus scroll-spy">
       <div class="inner">
         <div class="focus-contents">
-          <div class="focus-item">
+          <div class="focus-item back-to-position to-bottom delay-1">
             <div class="material-icons">settings</div>
             <h3>파이어베이스 연동</h3>
             <p>
@@ -308,7 +310,7 @@ s
                                                                                                                                                                         																																																																																																																																																																																																																																																																																																																																																																																																																																																																														Storage를 이용한 이미지 업로드
             </p>
           </div>
-          <div class="focus-item">
+          <div class="focus-item back-to-position to-bottom delay-3">
             <div class="material-icons">settings_accessibility</div>
             <h3>포트폴리오 게시</h3>
             <p>
@@ -316,7 +318,7 @@ s
                                                                                                                                                                         																																																																																																																																																																																																																																																																																																																																																																																																																																																																														HTML,CSS,JS만으로 프론트엔드 구현
             </p>
           </div>
-          <div class="focus-item">
+          <div class="focus-item back-to-position to-bottom delay-2">
             <div class="material-icons">person</div>
             <h3>스크롤 인터렉티브</h3>
             <p>
@@ -445,20 +447,57 @@ s
       </div>
     </section>
 
+    <!-- Section : Portfolio2 -->
+    <section class="portfolio2">
+      
+        <h2 class="fix_tit">
+          <!-- <span>SVG :D</span>
+          <strong>PARALLAX</strong> -->
+          <div class="svg_wrap">
+            <svg 
+              id="portfolio2_svg" 
+              xmlns="http://www.w3.org/2000/svg"  
+              viewBox="0 0 1920 1080"
+            >
+    
+              <path class="cls-1" d="M696.36,496.85c0,0-3.07-11.92,0-17.16c0,0,5.96-8.49,13.18-6.5c0,0,8.85,0.36,14.09,7.77c0,0,5.06,5.06,0,14.99l-3.25,9.93
+              c0,0-3.43,1.99,2.71,3.07s5.78,1.63,8.85,3.79c3.07,2.17,2.89,7.04,2.89,7.04l7.77,3.25l4.33,12.64l1.08,8.31l3.43,5.06l1.26,3.97
+              l1.08,5.24c0,0,1.63,2.17-4.51,2.17s-6.5-1.44-7.04-2.35c-0.54-0.9-3.25-3.25-3.25-3.25l-1.08-1.63c0,0-1.46-5.91-1.83,4.96
+              s-0.85,14.04-0.85,14.04s0.98,3.3-2.08,4.15c-3.05,0.85-3.05,0.85-3.05,0.85s-1.22-0.61-1.22,1.34s2.48,4.15-4.38,3.66
+              c0,0-2.46-2.93-2.46,5.13s-0.85,11.35-0.85,11.35l0.85,4.88l-0.85,8.67l-0.37,13.67l-2.32,2.56c0,0-1.95,4.15-1.59,4.03
+              s0.73,2.69,0.73,2.69l2.08,0.98l0.37,3.78l0.85,4.52l0.73,4.15h-2.44h-3.78l-0.73,4.64l-0.85,3.17h-9.64c0,0-1.46,0.24-1.46-3.91
+              c0-4.15,0.37-8.91,0.37-8.91v-3.66c0,0,0.73-4.27,0.61-4.64s-0.12-3.54-0.12-3.54l-3.17-0.12c0,0-1.95-8.55-1.95-8.91
+              c0-0.37-1.34-6.47-1.34-6.47s-1.22-5.98-1.34-6.71c-0.12-0.73-2.08-8.42-2.2-8.91s-1.83-7.08-1.83-7.08l-1.83-6.59l-0.98-5.13
+              c0,0,1.1-3.78-4.03-3.91c0,0-1.95,1.71-2.44,2.69s-2.44,3.91-2.44,3.91l-0.73,2.32c0,0,0.24,3.42-5.25,0.85s-5.01-6.47-5.01-6.47
+              l-2.32-4.76c0,0-1.83-1.1,0.61-3.78s5.98-8.02,5.98-8.02l2.56-2.6c0,0,1.83-2.08,0.73-10.86c-1.1-8.79-0.73-11.14-0.73-11.14
+              l-0.73-4.36c0,0,2.08-3.05-1.83-1.95l-4.64-5.01l5.49-4.88l-1.59-7.69c0,0-0.98-2.56,3.17-2.08c4.15,0.49,5.13,1.83,5.13,1.83
+              l4.39-0.37c0,0,1.22,1.1,4.39-1.83c3.17-2.93,5.74-4.03,5.74-4.03s2.69,0.98,3.17-1.83S696.36,496.85,696.36,496.85z"
+            />
+            </svg>
+          </div>
+        </h2>
+        
+        <figure class="video_wrap">
+          <!-- <video src="./videos/eunsung.mp4" muted loop></video> -->
+          <!-- <img src="./images/back_bg.jpg"> -->
+        </figure> 
+      
+    </section>
+
     <!-- Section : FAQ -->
-    <section class="faq">
+    <section class="faq scroll-spy">
       <div class="inner">
         <div class="faq-content">
-          <div class="left-content">
+          <div class="left-content back-to-position to-right delay-1">
             <h2>홈페이지에 사용한</h2>
             <h2>코드설명과 기술들을 알려드려요</h2>
             <p>
               FAQ로 많이 사용하는 아코디언 타입의 Jquery를 활용한 구현입니다.
-                                                                                                                                                                        																																																																																																																																																																																																																																																												아콘디언의 내용을 통해 홈페이지에서 사용된 대표적인 구현방법을
-                                                                                                                                                                        																																																																																																																																																																																																																																																												간략히 알려드리고자 합니다.
+      																아콘디언의 내용을 통해 홈페이지에서 사용된 대표적인 구현방법을
+                                                                   																간략히 알려드리고자 합니다.
             </p>
           </div>
-          <div class="faq-accordion">
+          <div class="faq-accordion back-to-position to-left delay-2">
             <div class="faq-item acitive">
               <div class="faq-title">
                 HTML5, CSS3, Javascript로 프론트엔드 구현
@@ -530,14 +569,14 @@ s
       <div class="section-title"></section>
 
       <!-- Section : Contact -->
-      <section class="contact">
+      <section class="contact scroll-spy">
         <div class="inner">
 
           <div class="section-content">
-            <div class="content-left">
+            <div class="content-left back-to-position to-right delay-1">
               <div id="map"></div>
             </div>
-            <div class="content-right">
+            <div class="content-right back-to-position to-left delay-2">
               <form action="">
                 <div class="input-field">
                   <input type="name" id="username" required/><span>이름</span>
