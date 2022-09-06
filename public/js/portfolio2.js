@@ -1,10 +1,11 @@
 // SVG Path
+var svgWrap = document.querySelector(".svg_wrap");
 var pf2 = document.querySelector(".portfolio2");
 var pf2Top = pf2.getBoundingClientRect().top + window.scrollY;
 var pf2Bottom = pf2Top + pf2.offsetHeight;
 var svgPath = document.querySelector("#portfolio2_svg path");
 var isPlay = false;
-
+console.log(pf2Top);
 function svgSet() {
   svgPath.style.strokeDasharray =
     svgPath.getTotalLength() + "," + svgPath.getTotalLength();
@@ -25,6 +26,7 @@ function drawSvg() {
       parallaxStartValue - parallaxStartValue * (parallaxPercent / 100)
     )
   );
+  console.log(parallaxMoveDistance);
 
   svgPath.style.strokeDashoffset = parallaxMoveDistance;
 
@@ -55,11 +57,10 @@ function init() {
 window.addEventListener(
   "scroll",
   function () {
-    drawSvg();
-    // drawSvg();
-    // if (window.scrollY > pf2Top && window.scrollY < pf2Bottom) {
-    //   drawSvg();
-    // }
+    if (window.scrollY > pf2Top && window.scrollY < pf2Bottom) {
+      svgWrap.classList.add("fix");
+      drawSvg();
+    }
   },
   false
 );
