@@ -1,5 +1,6 @@
 // SVG Path
 var svgWrap = document.querySelector(".svg_wrap");
+
 var pf2 = document.querySelector(".portfolio2");
 var pf2Top = pf2.getBoundingClientRect().top + window.scrollY;
 var pf2Bottom = pf2Top + pf2.offsetHeight;
@@ -53,7 +54,7 @@ function init() {
   svgSet();
   drawSvg();
 }
-
+var scrollNum = pf2Bottom - 3000;
 window.addEventListener(
   "scroll",
   function () {
